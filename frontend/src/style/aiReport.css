@@ -1,0 +1,123 @@
+
+.report-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.report-modal {
+    background: white;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalOpen 0.25s ease;
+}
+
+.report-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.report-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.report-header p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.close-btn {
+    border: none;
+    background: #f1f5f9;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.report-content {
+    padding: 25px;
+    overflow-y: auto;
+    flex: 1;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.report-content h1,
+.report-content h2,
+.report-content h3 {
+    color: #0f172a;
+    margin-top: 24px;
+}
+
+.report-content strong {
+    color: #0f172a;
+}
+
+.report-content li {
+    margin: 8px 0;
+}
+
+.report-footer {
+    padding: 15px 25px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.report-footer span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.report-footer button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .report-overlay {
+        padding: 8px;
+    }
+
+    .report-modal {
+        max-height: 95vh;
+    }
+
+    .report-content {
+        padding: 18px;
+    }
+}
